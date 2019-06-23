@@ -6,7 +6,7 @@
 name: Deepesh Singh Thakur
 
 # Short bio or description (displayed in the header)
-description: Web Developer from Somewhere
+description: Blog For GSoC 2019 Project: Native Julia ODE, SDE, DAE, DDE, and (S)PDE Solvers
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://github.com/deeepeshthakur/GSoCBlog2019/blob/master/images/display_image.jpg
@@ -19,10 +19,10 @@ avatar: https://github.com/deeepeshthakur/GSoCBlog2019/blob/master/images/displa
 footer-links:
   dribbble:
   email: deeepeshthakur@gmail.com
-  facebook:
+  facebook: deeepeshsinghthakur
   flickr:
   github: deeepeshthakur
-  instagram:
+  instagram: deepesh__thakur
   linkedin:
   pinterest:
   rss: # just type anything here for a working RSS icon
@@ -41,13 +41,13 @@ google_analytics:
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url:
+url: deeepeshthakur.github.io
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
 # and NOT your User repository (http://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
-baseurl: ""
+baseurl: "/GSoCBlog2019"
 
 #
 # !! You don't need to change any of the configuration flags below !!
@@ -84,3 +84,6 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+
+plugins:
+  - jekyll-seo-tag
