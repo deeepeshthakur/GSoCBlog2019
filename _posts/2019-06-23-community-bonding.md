@@ -26,3 +26,6 @@ With this IRKC and SERK-methods are almost complete and only their benchmarking 
 |**Step_size limitations on SERK Methods and RKC** [#752](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/752) | Merged |
 |**Fix RKC_utils** [#759](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/759)            | Merged |
 |**RKC_utils bug** [#765](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/765)            | Open |
+
+
+Going forward after discussing with my mentor I've decided to postpone benchmarking of SERK-methods to prioritize implementation of SROCK-methods. I plan to implement some basic stochastic solvers in [StochasticDiffEq.jl](https://github.com/JuliaDiffEq/StochasticDiffEq.jl), and then start with SROCK methods as detailed in my proposal.
