@@ -9,9 +9,9 @@ I spent the first last week of May going through literature on S-ROCK methods wh
 
 With this IRKC and SERK-methods are almost complete and only their benchmarking remains.
 
-##List of Contributions
+## List of Contributions
 
-| Disciption | PR | Status |
+| Disciption | Pull Requests | Current Status |
 |:--------------:|:--------:|:----------:|
 | Implemented ESERK5 | [#692](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/692) | Merged |
 | IRKC Memory Optimisation | [#723](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/723) | Merged |
