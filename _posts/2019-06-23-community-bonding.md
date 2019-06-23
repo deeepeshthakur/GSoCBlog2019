@@ -11,7 +11,7 @@ With this IRKC and SERK-methods are almost complete and only their benchmarking 
 
 **List of Contributions**
 
-| **Disciption** | **PR** | **Status** |
+| Disciption | PR | Status |
 |:--------------:|:--------:|:----------:|
 | Implemented ESERK5 | [#692](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/692) | Merged |
 | IRKC Memory Optimisation | [#723](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/723) | Merged |
@@ -25,7 +25,7 @@ With this IRKC and SERK-methods are almost complete and only their benchmarking 
 | Stepsize Limits for ROCK Methods | [#745](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/745) | Merged |
 | Stepsize Limtis for SERK Methods and RKC | [#752](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/752) | Merged |
 | Fix RKC_utils.jl | [#759](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/759) | Merged |
-| RKC_utils GPU Compatibility [#765](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/765) | Open |
+| RKC_utils GPU Compatibility | [#765](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/765) | Open |
 
 
 Going forward after discussing with my mentor I've decided to postpone benchmarking of SERK-methods to prioritize implementation of SROCK-methods. I plan to implement some basic stochastic solvers in [StochasticDiffEq.jl](https://github.com/JuliaDiffEq/StochasticDiffEq.jl), and then start with SROCK methods as detailed in my proposal.
