@@ -11,18 +11,18 @@ With this IRKC and SERK-methods are almost complete and only their benchmarking 
 
 **List of Contributions**
 
-|      **PR**     |    **Status**  |
-|:------------:|:-----------:|
-|**Implemented ESERK5** [#692](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/692) | Merged |
-|**IRKC Memory Usage** [#723](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/723) | Merged |
-|**ROCK2 Less Memory Usage** [#729](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/729) | Merged |
-|**SERK2v2** [#732](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/732) | Merged |
-|**IRKC adaptive fix** [#733](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/733) | Merged |
-|**IRKC extra allocation** [#734](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/734) | Merged |
-|**ESERK4** [#737](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/737) | Open |
-|**Fix ROCK methods** [#740](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/740) | Merged |
+|                                         **PR**                                                |         **Status**         |
+|:---------------------------------------------------------------------------------------------:|:--------------------------:|
+|**Implemented ESERK5** [#692](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/692)       | Merged |
+|**IRKC Memory Usage** [#723](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/723)        | Merged |
+|**ROCK2 Less Memory Usage** [#729](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/729)  | Merged |
+|**SERK2v2** [#732](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/732)                  | Merged |
+|**IRKC adaptive fix** [#733](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/733)        | Merged |
+|**IRKC extra allocation** [#734](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/734)    | Merged |
+|**ESERK4** [#737](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/737)                   | Open |
+|**Fix ROCK methods** [#740](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/740)         | Merged |
 |**CleanUp ROCK Methods and Memory Usage ROCK4** [#741](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/741) | Merged |
 |**Limiting Step_Size ROCK methods** [#745](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/745) | Merged |
 |**Step_size limitations on SERK Methods and RKC** [#752](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/752) | Merged |
-|**Fix RKC_utils** [#759](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/759) | Merged |
-|**RKC_utils bug** [#765](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/765) | Open |
+|**Fix RKC_utils** [#759](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/759)            | Merged |
+|**RKC_utils bug** [#765](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/765)            | Open |
