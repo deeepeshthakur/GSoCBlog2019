@@ -28,15 +28,14 @@ With this IRKC and SERK-methods are almost complete and only their benchmarking 
 | RKC_utils GPU Compatibility | [#765](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/765) | Open |
 
 ## Performance for the above Stabilized Methods
+   1. ### Non-Stiff Problems
+       * [Fitzhugh-Nagumo](https://nextjournal.com/deeepeshthakur/fitzhugh-nagumo-work-precision-diagrams)
+       * [Lotka-Volterra](https://nextjournal.com/deeepeshthakur/lotka-volterra-work-precision-diagrams)
+       * [Linear 100x100](https://nextjournal.com/deeepeshthakur/linear-100x100-work-precision-diagrams)
+       * [Rigid Body](https://nextjournal.com/deeepeshthakur/rigid-body-work-precision-diagrams)
 
-### Non-Stiff Problems
-
-[Fitzhugh-Nagumo](https://nextjournal.com/deeepeshthakur/fitzhugh-nagumo-work-precision-diagrams)
-[Lotka-Volterra](https://nextjournal.com/deeepeshthakur/lotka-volterra-work-precision-diagrams)
-[Linear 100x100](https://nextjournal.com/deeepeshthakur/linear-100x100-work-precision-diagrams)
-[Rigid Body](https://nextjournal.com/deeepeshthakur/rigid-body-work-precision-diagrams)
-
-### Stiff Problems
+  2. ### Stiff Problems
+       *
 
 ## Future Work
 Going forward after discussing with my mentor I've decided to postpone benchmarking of SERK-methods to prioritize implementation of SROCK-methods. I plan to implement some basic stochastic solvers in [StochasticDiffEq.jl](https://github.com/JuliaDiffEq/StochasticDiffEq.jl), and then start with SROCK methods as detailed in my proposal.
