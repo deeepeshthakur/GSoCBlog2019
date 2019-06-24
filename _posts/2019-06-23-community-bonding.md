@@ -35,7 +35,8 @@ With this IRKC and SERK-methods are almost complete and only their benchmarking 
        * [Rigid Body](https://nextjournal.com/deeepeshthakur/rigid-body-work-precision-diagrams)
 
   2. ### Stiff Problems
-       *
+       * [Orego](https://nextjournal.com/deeepeshthakur/orego-work-precision-diagrams)
+       * [Hires](https://nextjournal.com/deeepeshthakur/hires-work-precision-diagrams)
 
 ## Future Work
 Going forward after discussing with my mentor I've decided to postpone benchmarking of SERK-methods to prioritize implementation of SROCK-methods. I plan to implement some basic stochastic solvers in [StochasticDiffEq.jl](https://github.com/JuliaDiffEq/StochasticDiffEq.jl), and then start with SROCK methods as detailed in my proposal.
