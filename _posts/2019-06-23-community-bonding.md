@@ -38,6 +38,7 @@ With this IRKC and SERK-methods are almost complete and only their benchmarking 
        * [Orego](https://nextjournal.com/deeepeshthakur/orego-work-precision-diagrams)
        * [Hires](https://nextjournal.com/deeepeshthakur/hires-work-precision-diagrams)
        * [Filament](https://nextjournal.com/deeepeshthakur/filament-work-precision-diagrams)
+       * [Comparing Stabilized Methods for Filament with TRBDF2](https://nextjournal.com/deeepeshthakur/filament-work-precision-diagrams-comparison-with-trbdf2)
 
 ## Future Work
 Going forward after discussing with my mentor I've decided to postpone benchmarking of SERK-methods to prioritize implementation of SROCK-methods. I plan to implement some basic stochastic solvers in [StochasticDiffEq.jl](https://github.com/JuliaDiffEq/StochasticDiffEq.jl), and then start with SROCK methods as detailed in my proposal.
