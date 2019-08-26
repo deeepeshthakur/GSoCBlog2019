@@ -36,4 +36,4 @@ I made contributions to the Docs Page by adding docs for the ODE and SDE solvers
 
 
 ## Future Work
-With the above contibutions  [Issue #73](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/issues/73) of [StochasticDiffEq.jl](https://github.com/JuliaDiffEq/StochasticDiffEq.jl) is almost complete with only `SROCK2KomBur` remaining. After that I want to implement a robust way of approximating Double Stochastic Integrals with order 1 accuracy.
+With the above contibutions  [Issue #73](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/issues/73) of [StochasticDiffEq.jl](https://github.com/JuliaDiffEq/StochasticDiffEq.jl) is almost complete with only `SROCK2KomBur` and `SROCKC2` remaining. After that I want to implement a robust way of approximating Double Stochastic Integrals with order 1 accuracy.

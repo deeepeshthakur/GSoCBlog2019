@@ -3,22 +3,19 @@ layout: post
 title: Third Evaluation Report
 ---
 
-I have completed the implementation of `ESERK4` method. I also worked towards making the ROCK and SERK solvers GPU compatible. This allows using DifferentialEquations.jl problem type mixed with neural networks. These methods are a very promising option in training data generation, for example `ROCK2` taking 3 minutes against 40 minutes with `BS3`.[1]
-
-I also started the implementation of Stochastic-ROCK solvers. These solvers boast similar benifits for SDEs like ROCK methods for ODEs. The three methods that I've implemented so far are `SROCK1` both for Stratonovich and Ito type problems and `SROCK2` for Ito type problems.
+With the addition of `KomBurSROCK2` and `SROCKC2` all the methods mentioned in StochasticDiffEq.jl [Issue #73](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/issues/73) are complete. `KomBurSROCK2` is similar to `SROCK2` for Stratonovich Problems.
 
 | Solver | Description |
 |:--------------:|:--------:|
-| **SROCK1{:Ito}** | This is an explicit strong order 1 solver for stiff Ito type problems. It gives strong order 1 for 1-Dimensional Noise and Diagonal Noise and strong order 1/2 for General Noise case. It can be configured to get strong order 1 for Commutative Noise with some extra calculation but this is not yet implemented. Also this methods gives weak order 1 convergence for all the above Noise cases. |
-| **SROCK1{:Stratonovich}** | This is an explicit strong order 1 solver for stiff Stratonovich type problems. It has convergence of strong order 1 for 1-Dimensional, Diagonal and Commutative Noise and strong order 1/2 for General Noise cases. Also we get weak order 1 for the above mentioned noise cases. |
-| **SROCK2** | This is an explicit solver with weak order 2 for Ito type problems. |
+| **KomBurSROCK2** | This is an explicit strong order 1 and weak order 2 solver for stiff Stratonovich type problems. This method is similar to SROCK2 for Stratonovich Problems. It is compatible with 1-D, Diagonal, Commutative, and General Noise cases. |
+| **SROCKC2** | This is an explicit strong order 1 solver for stiff Ito type problems. It has convergence of strong order 1 for 1-Dimensional, Diagonal and Commutative Noise. |
 
-The above mentioned solvers are compatible with 1-D, Diagonal, Commutative and General Noise. Note that `SROCK1{:Ito}` is also compatible with Commutative Noise but with strong order 1/2.
+With this in place, I refactored the SROCK methods I implemented to only use vector type calculation. Further adding Tracked Array compatibility and fixing some bugs in general noise case in `SROCKEM`. Along with these I added Diagonal noise compatibility in 3-stage Split-step Milstein Methods and fixed bugs in error calculation in RKMilCommute when using adaptive setting.
 
-Apart from these I've also added Three stage split-step Explicit Milstein Methods mentioned in StochasticDiffEq.jl [Issue #65](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/issues/65). These solvers are compatible with 1-D noise and Diagonal Noise.
+### Approximating Iterated Integrals
+Now StochasticDiffEq has functionality for estimating Double Stochastic Integrals using iterative techniques as used in [SDELAB](https://doi.org/10.1016/j.cam.2006.05.037) with accuracy of order 1. These are required to get order 1 convergence in Milstein Methods for general noise case. The original paper was by Wiktorsson that is [Joint Characteristic Function and Simultaneous Simulation of Iterated Itô Integrals for Multiple Independent Brownian Motions](https://www.jstor.org/stable/2667257). Apart from this we use take advantage of Diagonal and Commutative noise cases to approximate these using less computational effort.
 
-In addition to the above solver I've added Benchmark files for `ROCK2` and `ROCK4` ODE solvers.
-
+Apart from this I also made contirbutions to OrdinaryDiffEq.jl and DiffEqDevTools.jl where I fixed bugs in ROCK Method in case of negative `dt`, and fix noise type when noise is non-diagonal in `analyticless_test_convergence`. I also refactered SERK methods adding step-size limits to `ESERK4`.
 
 ## List of Contributions during Weeks 9 - 13
 
@@ -50,9 +47,9 @@ In addition to the above solver I've added Benchmark files for `ROCK2` and `ROCK
 
 
 ## Future Work
-Right now I'm focusing on implementing and optimising all the SROCK solvers mentioned in [Issue #73](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/issues/73) of [StochasticDiffEq.jl](https://github.com/JuliaDiffEq/StochasticDiffEq.jl). I also plan to add benchmarks for these solvers.
-
-**All the problems for benchmarking purposes are taken from [DiffEqBenchmarks.jl](https://github.com/JuliaDiffEq/DiffEqBenchmarks.jl)**
+With iterated_integrals.jl in place, I want to add Milstein Methods that take advantage of this to get strong order 1 convergence in case of general noise. Also, I want to add Benchmarks to show the performance of these solvers to the community and I SROCK method `KomBurSROCK1` which has strong order 1 convergence using iterated_integrals.jl.
 
 ## Refrences
-   1. [Neural Jump SDEs (Jump Diffusions) and Neural PDEs](http://www.stochasticlifestyle.com/neural-jump-sdes-jump-diffusions-and-neural-pdes/)
+   1. [SDELAB](https://doi.org/10.1016/j.cam.2006.05.037)
+   2. [SDELAB2](https://github.com/tonyshardlow/SDELAB2)
+   3. [Wiktorsson, Magnus. Joint Characteristic Function and Simultaneous Simulation of Iterated Itô Integrals for Multiple Independent Brownian Motions. The Annals of Applied Probability, vol. 11, no. 2, 2001, pp. 470–487. JSTOR](www.jstor.org/stable/2667257)
