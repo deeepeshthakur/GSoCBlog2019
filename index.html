@@ -3,8 +3,8 @@ layout: default
 ---
 
 <div class="posts">
-  <!-- {% assign sorted = (site.posts | sort: 'date') | reverse %}  SORT EARLIER FIRST-->
-  {% assign sorted = (site.posts | sort: 'date')%}
+  {% assign sorted = (site.posts | sort: 'date') | reverse %}
+  <!-- {% assign sorted = (site.posts | sort: 'date')%}  SORT EARLIER FIRST -->
 
   {% for post in sorted %}
     <article class="post">
