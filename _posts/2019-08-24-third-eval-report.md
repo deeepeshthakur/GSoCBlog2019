@@ -20,44 +20,33 @@ Apart from these I've also added Three stage split-step Explicit Milstein Method
 In addition to the above solver I've added Benchmark files for `ROCK2` and `ROCK4` ODE solvers.
 
 
-## List of Contributions during Weeks 1 - 4
-
-### OrdinaryDiffEq.jl
-
-| Description | Pull Requests | Current Status |
-|:--------------:|:--------:|:----------:|
-| Implemented ESERK4 | [#737](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/737) | Merged |
-| RKC_utils GPU Compatibility | [#765](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/765) | Merged |
+## List of Contributions during Weeks 9 - 13
 
 ### StochasticDiffEq.jl
 
 | Description | Pull Requests | Current Status |
 |:--------------:|:--------:|:----------:|
-| Implemented Three Stage Split-Step Milstein Methods | [#150](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/150) | Merged |
-| Implemented SROCK Method for Stratonovich-type Problems | [#153](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/153) | Merged |
-| Optimised Stage-selection for SROCK1 method | [#159](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/159) | Merged |
-| Implemented SROCK Method for Ito-type Problems | [#161](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/161) | Merged |
-| Bug Fix in RKMilCommute | [#164](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/164) | Merged |
-| Implemented SROCK2 Method for Ito-type Problems | [#166](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/166) | Merged |
+| Diagonal Noise Case Three Stage Split-step Milstein Methods | [#184](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/184) | Merged |
+| Implemented KomBurSROCK2 | [#186](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/186) | Merged |
+| Vector Format for SROCK Methods | [#192](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/192) | Merged |
+| Implemented SROCKC2 | [#204](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/204) | Merged |
+| Implemented Iterated Integrals | [#209](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/209) | Merged |
+| Fix Error Calculation RKMilCommute | [#218](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/218) | Merged |
+| SROCKEM General Noise Bug Fix | [#227](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/227) | Merged |
+| SROCK Methods Tracked Arrays Compatibility | [#228](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/228) | Open |
 
-### DiffEqBenchmarks.jl
+### OrdinaryDiffEq.jl
 
 | Description | Pull Requests | Current Status |
 |:--------------:|:--------:|:----------:|
-| Added Benchmark files for ROCK2 and ROCK4 | [#39](https://github.com/JuliaDiffEq/DiffEqBenchmarks.jl/pull/39) | Merged |
+| SERK Cleanup | [#808](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/808) | Merged |
+| Bug Fix ROCK Methods | [#848](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/848) | Merged |
 
+### DiffEqDevTools.jl
 
-## Work Precision Diagrams for Stabilized ODE-Solvers including ESERK4
-   1. ### Non-Stiff Problems
-       * [Fitzhugh-Nagumo (including ESERK4)](https://nextjournal.com/deeepeshthakur/fitzhugh-nagumo-work-precision-diagrams-including-eserk4)
-       * [Lotka-Volterra (including ESERK4)](https://nextjournal.com/deeepeshthakur/lotka-volterra-work-precision-diagrams-including-eserk4)
-       * [Linear 100x100 (including ESERK4)](https://nextjournal.com/deeepeshthakur/linear-100x100-work-precision-diagrams-including-eserk4)
-       * [Rigid Body (including ESERK4)](https://nextjournal.com/deeepeshthakur/rigid-body-work-precision-diagrams-including-eserk4)
-
-  2. ### Stiff Problems
-       * [Orego (including ESERK4)](https://nextjournal.com/deeepeshthakur/orego-work-precision-diagrams-including-eserk4)
-       * [Hires (including ESERK4)](https://nextjournal.com/deeepeshthakur/hires-work-precision-diagrams-including-eserk4)
-       * [Filament (including ESERK4)](https://nextjournal.com/deeepeshthakur/filament-work-precision-diagrams-including-eserk4)
+| Description | Pull Requests | Current Status |
+|:--------------:|:--------:|:----------:|
+| Fix Noise Type in Analyticless Convergence Test | [#46](https://github.com/JuliaDiffEq/DiffEqDevTools.jl/pull/46) | Merged |
 
 
 ## Future Work
