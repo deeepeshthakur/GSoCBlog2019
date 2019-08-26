@@ -3,14 +3,46 @@ layout: post
 title: First Evaluation Report
 ---
 
-I got selected for Google Summer of Code 2019 for a project in The Julia Programming Language under the joint mentorship of [Chris Rackaukas](http://chrisrackauckas.com/), [Samuel Isaacson](http://math.bu.edu/people/isaacson/) and [Yingbo Ma](https://github.com/YingboMa).
+The Julia Community is simply amazing. Along the way I had my share of genuine but sometimes stupid and irritating doubts, everybody was really helpful. Slack is very active and very well organised. I'm really grateful to be a part of this community.
 
-My project is under [JuliaDiffEq](https://github.com/JuliaDiffEq), titled [Native Julia ODE, SDE, DAE, DDE, and (S)PDE Solvers](https://summerofcode.withgoogle.com/projects/#6552298552033280).
+I spent the first last week of May going through literature on S-ROCK methods which I proposed to implement during my GSoC. After the first week I tried fixing bugs and getting the benchmarks for ROCK methods ready. I worked towards optimising memory usage in ROCK-methods, RKC, IRKC, and SERK-methods. Also we put in place certain step size limits to prevent the solver from going unstable. Also During this period I implemented SERK2 and ESERK4 which are similar SERK methods that I proposed but have ordrs 2 and 4 replectively.
 
-## About The Project
+With this IRKC and SERK-methods are almost complete and only their benchmarking remains.
 
-The main aim of this project as the title suggests revolves around adding Native Julia ODE, SDE solvers. JuliaDiffEq already boasts a rich library of solvers, my project focuses on improving it by adding Stabilized Explicit Solvers and Differential Algebraic Equations Solver.
+## List of Contributions
 
-Conventionally Stiff problems are considered to be the domain of Implicit-DiffEq solvers and Non-stiff problems are approached by explicit methods. A step of explicit method is usually cheaper than it implicit counterpart because implicit solvers as the name suggests involve solving large usually nonlinear implicit equations but they are still preferred because in case of stiff problems explicit methods suffer from serious step-size reduction because of stability issues. Here is where Stabilized methods come into play, they focus on extending the stability domains of explicit methods by the use of chebyshev polynomials. These methods have stability domains that increase quadratically with the number of stages, thus they can be used for stiff moderately-stiff and some stiff equations saving the effort required to solve large systems of implicit equations.
+# OrdinaryDiffEq.jl
 
-The second major part of my project in a DAE Solver. There are many DAE solvers available but they usually fail to compute consistent initial conditions. I plan on implementing a DAE solver based on BDF formulas that is capable of calculating consistent initial conditions for DAE of index 1.
+| Description | Pull Requests | Current Status |
+|:--------------:|:--------:|:----------:|
+| Implemented ESERK4 | [#737](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/737) | Merged |
+| RKC_utils GPU Compatibility | [#765](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/765) | Merged |
+
+# StochasticDiffEq.jl
+
+| Description | Pull Requests | Current Status |
+|:--------------:|:--------:|:----------:|
+| Implemented Three Stage Split-Step Milstein Methods | [#150](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/150) | Merged |
+| Implemented SROCK Method for Stratonovich-type Problems | [#153](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/153) | Merged |
+| Optimised Stage-selection for SROCK1 method | [#159](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/159) | Merged |
+| Implemented SROCK Method for Ito-type Problems | [#161](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/161) | Merged |
+| Bug Fix in RKMilCommute | [#164](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/164) | Merged |
+| Implemented SROCK2 Method for Ito-type Problems | [#166](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/166) | Merged |
+
+## Performance for the above Stabilized Methods
+   1. ### Non-Stiff Problems
+       * [Fitzhugh-Nagumo](https://nextjournal.com/deeepeshthakur/fitzhugh-nagumo-work-precision-diagrams)
+       * [Lotka-Volterra](https://nextjournal.com/deeepeshthakur/lotka-volterra-work-precision-diagrams)
+       * [Linear 100x100](https://nextjournal.com/deeepeshthakur/linear-100x100-work-precision-diagrams)
+       * [Rigid Body](https://nextjournal.com/deeepeshthakur/rigid-body-work-precision-diagrams)
+
+  2. ### Stiff Problems
+       * [Orego](https://nextjournal.com/deeepeshthakur/orego-work-precision-diagrams)
+       * [Hires](https://nextjournal.com/deeepeshthakur/hires-work-precision-diagrams)
+       * [Filament](https://nextjournal.com/deeepeshthakur/filament-work-precision-diagrams)
+       * [Comparing Stabilized Methods for Filament with TRBDF2](https://nextjournal.com/deeepeshthakur/filament-work-precision-diagrams-comparison-with-trbdf2)
+
+## Future Work
+Going forward after discussing with my mentor I've decided to postpone benchmarking of SERK-methods to prioritize implementation of SROCK-methods. I plan to implement some basic stochastic solvers in [StochasticDiffEq.jl](https://github.com/JuliaDiffEq/StochasticDiffEq.jl), and then start with SROCK methods as detailed in my proposal.
+
+**All the problems for benchmarking purposes are taken from [DiffEqBenchmarks.jl](https://github.com/JuliaDiffEq/DiffEqBenchmarks.jl)**
