@@ -11,14 +11,14 @@ With this IRKC and SERK-methods are almost complete and only their benchmarking 
 
 ## List of Contributions
 
-# OrdinaryDiffEq.jl
+### OrdinaryDiffEq.jl
 
 | Description | Pull Requests | Current Status |
 |:--------------:|:--------:|:----------:|
 | Implemented ESERK4 | [#737](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/737) | Merged |
 | RKC_utils GPU Compatibility | [#765](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/765) | Merged |
 
-# StochasticDiffEq.jl
+### StochasticDiffEq.jl
 
 | Description | Pull Requests | Current Status |
 |:--------------:|:--------:|:----------:|
