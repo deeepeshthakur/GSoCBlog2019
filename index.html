@@ -3,10 +3,10 @@ layout: default
 ---
 
 <div class="posts">
-  {% assign sorted = (site.posts | sort: 'date') | reverse %}
+  <!-- {% assign sorted = (site.posts | sort: 'date') | reverse %} -->
   <!-- {% assign sorted = (site.posts | sort: 'date')%}  SORT EARLIER FIRST -->
 
-  {% for post in sorted %}
+  {% for post in site.posts %}
     <article class="post">
 
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
