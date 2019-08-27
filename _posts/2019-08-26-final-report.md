@@ -3,31 +3,15 @@ layout: post
 title: Final Report
 ---
 
-I have completed the implementation of `ESERK4` method. I also worked towards making the ROCK and SERK solvers GPU compatible. This allows using DifferentialEquations.jl problem type mixed with neural networks. These methods are a very promising option in training data generation, for example `ROCK2` taking 3 minutes against 40 minutes with `BS3`.[1]
+## Basic Info
 
-I also started the implementation of Stochastic-ROCK solvers. These solvers boast similar benifits for SDEs like ROCK methods for ODEs. The three methods that I've implemented so far are `SROCK1` both for Stratonovich and Ito type problems and `SROCK2` for Ito type problems.
+**Name:** Deepesh Singh Thakur ([deeepeshthakur](https://github.com/deeepeshthakur))
+**Proposal:** Native Julia ODE, SDE, DAE, DDE, and (S)PDE Solvers ([link](https://storage.googleapis.com/summerofcode-prod.appspot.com/gsoc/core_project/doc/5078821303222272_1554719641_Proposal-GSoC-19-Deepesh-Singh-Thakur.pdf?Expires=1566949285&GoogleAccessId=summerofcode-prod%40appspot.gserviceaccount.com&Signature=NuuOSbtU6EpED7Etuq%2BphEtmkLzVfpxGRw%2BBfln7ddVlL74laEIdc%2B%2BLIjjEVRvq2YWfPyIgBe72WnnoMN0C9p2Vp3HFigJfhKs7R1dhwJYbEUmIn%2BvaQP2rB0BxJdiNhyQLDe5SWUB5fFxiHKCMRsvshs2YAo0i1exn45Vt4KcK6McJoYfU3jKAQVT%2BQjPXzFUuEHzAcS4KD8SNdVGlILxkMZi9m32Tz5IlCkWva4Md8sUYkDhmTk%2Bqcl4LiV4FX39zMJBTpN7sZXMJWmUhJ3AZgeEBF%2FmMTcv87%2B3ALlrntXEUnb5vufHV%2B5oPHptn4p2Y12x%2F7KWmLHdxkiC8ig%3D%3D))
+**Mentors:** [Dr. Christopher Rackauckas](https://github.com/ChrisRackauckas), [Yingbo Ma](https://github.com/YingboMa), [Prof. Samuel Isaacson](https://github.com/isaacsas)
+**Organization:** The Julia Language (JuliaDiffEq)
+**Repositories:** [StochasticDiffEq.jl](https://github.com/JuliaDiffEq/StochasticDiffEq.jl), [OrdinaryDiffEq.jl](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl), [DiffEqDevTools.jl](https://github.com/JuliaDiffEq/DiffEqDevTools.jl), [DiffEqDocs.jl](https://github.com/JuliaDiffEq/DiffEqDocs.jl), [DiffEqBenchmarks.jl](https://github.com/JuliaDiffEq/DiffEqBenchmarks.jl), [juliadiffeq.github.io](https://github.com/JuliaDiffEq/juliadiffeq.github.io).
 
-| Solver | Description |
-|:--------------:|:--------:|
-| **SROCK1{:Ito}** | This is an explicit strong order 1 solver for stiff Ito type problems. It gives strong order 1 for 1-Dimensional Noise and Diagonal Noise and strong order 1/2 for General Noise case. It can be configured to get strong order 1 for Commutative Noise with some extra calculation but this is not yet implemented. Also this methods gives weak order 1 convergence for all the above Noise cases. |
-| **SROCK1{:Stratonovich}** | This is an explicit strong order 1 solver for stiff Stratonovich type problems. It has convergence of strong order 1 for 1-Dimensional, Diagonal and Commutative Noise and strong order 1/2 for General Noise cases. Also we get weak order 1 for the above mentioned noise cases. |
-| **SROCK2** | This is an explicit solver with weak order 2 for Ito type problems. |
-
-The above mentioned solvers are compatible with 1-D, Diagonal, Commutative and General Noise. Note that `SROCK1{:Ito}` is also compatible with Commutative Noise but with strong order 1/2.
-
-Apart from these I've also added Three stage split-step Explicit Milstein Methods mentioned in StochasticDiffEq.jl [Issue #65](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/issues/65). These solvers are compatible with 1-D noise and Diagonal Noise.
-
-In addition to the above solver I've added Benchmark files for `ROCK2` and `ROCK4` ODE solvers.
-
-
-## List of Contributions during Weeks 1 - 4
-
-### OrdinaryDiffEq.jl
-
-| Description | Pull Requests | Current Status |
-|:--------------:|:--------:|:----------:|
-| Implemented ESERK4 | [#737](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/737) | Merged |
-| RKC_utils GPU Compatibility | [#765](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/765) | Merged |
+## Pull Requests
 
 ### StochasticDiffEq.jl
 
@@ -39,6 +23,75 @@ In addition to the above solver I've added Benchmark files for `ROCK2` and `ROCK
 | Implemented SROCK Method for Ito-type Problems | [#161](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/161) | Merged |
 | Bug Fix in RKMilCommute | [#164](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/164) | Merged |
 | Implemented SROCK2 Method for Ito-type Problems | [#166](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/166) | Merged |
+| Implemented SROCKEM | [#168](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/168) | Merged |
+| RKMilCommute GPU Compatibility | [#169](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/169) | Merged |
+| SROCK1 General Noise and Optimisation | [#170](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/170) | Merged |
+| RKMilCommute Memory Optimisation | [#173](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/173) | Merged |
+| Implemented SKSROCK | [#174](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/174) | Merged |
+| Fix Commutative Tests | [#175](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/175) | Merged |
+| Implemented Tang Xaio SROCK2W2Ito | [#177](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/177) | Merged |
+| Diagonal Noise Case Three Stage Split-step Milstein Methods | [#184](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/184) | Merged |
+| Implemented KomBurSROCK2 | [#186](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/186) | Merged |
+| Vector Format for SROCK Methods | [#192](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/192) | Merged |
+| Implemented SROCKC2 | [#204](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/204) | Merged |
+| Implemented Iterated Integrals | [#209](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/209) | Merged |
+| Fix Error Calculation RKMilCommute | [#218](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/218) | Merged |
+| SROCKEM General Noise Bug Fix | [#227](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/227) | Merged |
+| SROCK Methods Tracked Arrays Compatibility | [#228](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/pull/228) | Open |
+
+### OrdinaryDiffEq.jl
+
+| Description | Pull Requests | Current Status |
+|:--------------:|:--------:|:----------:|
+| Implemented LDDRK46 | [#607](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/607) | Merged |
+| Fix Nomenclature | [#610](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/610) | Merged |
+| Implemented NDBLSRK124 | [#611](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/611) | Merged |
+| Implemented NDBLSRK134 | [#614](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/614) | Merged |
+| Implemented NDBLSRK144 | [#616](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/616) | Merged |
+| Implemented ROCK4 | [#628](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/628) | Merged |
+| Implemented RKC | [#634](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/634) | Merged |
+| Implemented TSLDDRK74 | [#637](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/637) | Merged |
+| Implemented DGLDDRK73_C | [#641](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/641) | Merged |
+| Implemented DGLDDRK84_C | [#642](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/642) | Merged |
+| Implemented DGLDDRK84_F | [#644](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/644) | Merged |
+| LDDRK64 to HSLDDRK64 | [#653](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/653) | Merged |
+| Implemented IRKC | [#659](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/659) | Merged |
+| Implemented 2R+ schemes | [#663](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/663) | Merged |
+| Implemented 3R+ schemes | [#675](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/675) | Merged |
+| Implemented 4R+ and 5R+ schemes | [#686](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/686) | Merged |
+| IRKC Cleanup | [#687](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/687) | Merged |
+| Implemented ESERK5 | [#692](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/692) | Merged |
+| IRKC Memory Optimisation | [#723](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/723) | Merged |
+| ROCK2 Memory Optimisation | [#729](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/729) | Merged |
+| Implemented SERK2 | [#732](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/732) | Merged |
+| Fix IRKC Adaptive Version | [#733](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/733) | Merged |
+| Fix IRKC Extra Allocation | [#734](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/734) | Merged |
+| Implemented ESERK4 | [#737](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/737) | Open |
+| Fix ROCK Methods Constants | [#740](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/740) | Merged |
+| Cleanup ROCK Methods and ROCK4 Memory Optimisation | [#741](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/741) | Merged |
+| Stepsize Limits for ROCK Methods | [#745](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/745) | Merged |
+| Stepsize Limtis for SERK Methods and RKC | [#752](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/752) | Merged |
+| Fix RKC_utils.jl | [#759](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/759) | Merged |
+| RKC_utils GPU Compatibility | [#765](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/765) | Open |
+| Implemented ESERK4 | [#737](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/737) | Merged |
+| RKC_utils GPU Compatibility | [#765](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/765) | Merged |
+| SERK Cleanup | [#808](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/808) | Merged |
+| Bug Fix ROCK Methods | [#848](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/848) | Merged |
+
+### DiffEqDevTools.jl
+
+| Description | Pull Requests | Current Status |
+|:--------------:|:--------:|:----------:|
+| Fix Noise Type in Analyticless Convergence Test | [#46](https://github.com/JuliaDiffEq/DiffEqDevTools.jl/pull/46) | Merged |
+
+### DiffEqDocs.jl
+
+| Description | Pull Requests | Current Status |
+|:--------------:|:--------:|:----------:|
+| Fix Typo in Docs | [#193](https://github.com/JuliaDiffEq/DiffEqBenchmarks.jl/pull/193) | Merged |
+| Added Docs for new ODE solvers | [#195](https://github.com/JuliaDiffEq/DiffEqBenchmarks.jl/pull/195) | Merged |
+| Fix Formatting in Docs | [#216](https://github.com/JuliaDiffEq/DiffEqBenchmarks.jl/pull/216) | Merged |
+| Added Docs for ODE and SDE Solvers | [#233](https://github.com/JuliaDiffEq/DiffEqBenchmarks.jl/pull/233) | Merged |
 
 ### DiffEqBenchmarks.jl
 
@@ -46,24 +99,23 @@ In addition to the above solver I've added Benchmark files for `ROCK2` and `ROCK
 |:--------------:|:--------:|:----------:|
 | Added Benchmark files for ROCK2 and ROCK4 | [#39](https://github.com/JuliaDiffEq/DiffEqBenchmarks.jl/pull/39) | Merged |
 
+### juliadiffeq.github.io
 
-## Work Precision Diagrams for Stabilized ODE-Solvers including ESERK4
-   1. ### Non-Stiff Problems
-       * [Fitzhugh-Nagumo (including ESERK4)](https://nextjournal.com/deeepeshthakur/fitzhugh-nagumo-work-precision-diagrams-including-eserk4)
-       * [Lotka-Volterra (including ESERK4)](https://nextjournal.com/deeepeshthakur/lotka-volterra-work-precision-diagrams-including-eserk4)
-       * [Linear 100x100 (including ESERK4)](https://nextjournal.com/deeepeshthakur/linear-100x100-work-precision-diagrams-including-eserk4)
-       * [Rigid Body (including ESERK4)](https://nextjournal.com/deeepeshthakur/rigid-body-work-precision-diagrams-including-eserk4)
-
-  2. ### Stiff Problems
-       * [Orego (including ESERK4)](https://nextjournal.com/deeepeshthakur/orego-work-precision-diagrams-including-eserk4)
-       * [Hires (including ESERK4)](https://nextjournal.com/deeepeshthakur/hires-work-precision-diagrams-including-eserk4)
-       * [Filament (including ESERK4)](https://nextjournal.com/deeepeshthakur/filament-work-precision-diagrams-including-eserk4)
+| Description | Pull Requests | Current Status |
+|:--------------:|:--------:|:----------:|
+| Added Citings | [#20](https://github.com/JuliaDiffEq/juliadiffeq.github.io/pull/20) | Merged |
+| Added Citings | [#21](https://github.com/JuliaDiffEq/juliadiffeq.github.io/pull/21) | Merged |
+| Added Citings | [#22](https://github.com/JuliaDiffEq/juliadiffeq.github.io/pull/22) | Merged |
 
 
-## Future Work
-Right now I'm focusing on implementing and optimising all the SROCK solvers mentioned in [Issue #73](https://github.com/JuliaDiffEq/StochasticDiffEq.jl/issues/73) of [StochasticDiffEq.jl](https://github.com/JuliaDiffEq/StochasticDiffEq.jl). I also plan to add benchmarks for these solvers.
+## Blog Posts
 
-**All the problems for benchmarking purposes are taken from [DiffEqBenchmarks.jl](https://github.com/JuliaDiffEq/DiffEqBenchmarks.jl)**
+The following blogs describe the work during the entire period:
+   1. [About The Project](https://deeepeshthakur.github.io/gsocblog/about-the-project/)
+   2. [Community Bonding Period](https://deeepeshthakur.github.io/gsocblog/community-bonding/)
+   3. [First Evaluation Report](https://deeepeshthakur.github.io/gsocblog/first-eval-report/)
+   4. [Second Evaluation Report](https://deeepeshthakur.github.io/gsocblog/second-eval-report/)
+   5. [Third Evaluation Report](https://deeepeshthakur.github.io/gsocblog/third-eval-report/)
 
-## Refrences
-   1. [Neural Jump SDEs (Jump Diffusions) and Neural PDEs](http://www.stochasticlifestyle.com/neural-jump-sdes-jump-diffusions-and-neural-pdes/)
+## Acknowledgements
+I would like to thank Dr. Christopher Rackauckas, Yinbo Ma, David Widmann, and Prof. Samuel Isaacson for their support and guidance throughout the project. Shoutout to the entire Julia community for being awesome and amazingly helpful!
