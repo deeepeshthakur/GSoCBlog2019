@@ -122,4 +122,4 @@ The following blogs describe the work during the entire period:
    5. [Third Evaluation Report](https://deeepeshthakur.github.io/gsocblog/third-eval-report/)
 
 ## Acknowledgements
-I would like to thank Dr. Christopher Rackauckas, Yinbo Ma, David Widmann, and Prof. Samuel Isaacson for their support and guidance throughout the project. Shoutout to the entire Julia community for being awesome and amazingly helpful!
+I would like to thank Dr. Christopher Rackauckas, Yingbo Ma, David Widmann, and Prof. Samuel Isaacson for their support and guidance throughout the project. Shoutout to the entire Julia community for being awesome and amazingly helpful!
