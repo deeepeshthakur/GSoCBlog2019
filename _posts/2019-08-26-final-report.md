@@ -6,9 +6,13 @@ title: Final Report
 ## Basic Info
 
 **Name:** Deepesh Singh Thakur ([deeepeshthakur](https://github.com/deeepeshthakur))
+
 **Proposal:** Native Julia ODE, SDE, DAE, DDE, and (S)PDE Solvers ([link](https://storage.googleapis.com/summerofcode-prod.appspot.com/gsoc/core_project/doc/5078821303222272_1554719641_Proposal-GSoC-19-Deepesh-Singh-Thakur.pdf?Expires=1566949285&GoogleAccessId=summerofcode-prod%40appspot.gserviceaccount.com&Signature=NuuOSbtU6EpED7Etuq%2BphEtmkLzVfpxGRw%2BBfln7ddVlL74laEIdc%2B%2BLIjjEVRvq2YWfPyIgBe72WnnoMN0C9p2Vp3HFigJfhKs7R1dhwJYbEUmIn%2BvaQP2rB0BxJdiNhyQLDe5SWUB5fFxiHKCMRsvshs2YAo0i1exn45Vt4KcK6McJoYfU3jKAQVT%2BQjPXzFUuEHzAcS4KD8SNdVGlILxkMZi9m32Tz5IlCkWva4Md8sUYkDhmTk%2Bqcl4LiV4FX39zMJBTpN7sZXMJWmUhJ3AZgeEBF%2FmMTcv87%2B3ALlrntXEUnb5vufHV%2B5oPHptn4p2Y12x%2F7KWmLHdxkiC8ig%3D%3D))
+
 **Mentors:** [Dr. Christopher Rackauckas](https://github.com/ChrisRackauckas), [Yingbo Ma](https://github.com/YingboMa), [Prof. Samuel Isaacson](https://github.com/isaacsas)
+
 **Organization:** The Julia Language (JuliaDiffEq)
+
 **Repositories:** [StochasticDiffEq.jl](https://github.com/JuliaDiffEq/StochasticDiffEq.jl), [OrdinaryDiffEq.jl](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl), [DiffEqDevTools.jl](https://github.com/JuliaDiffEq/DiffEqDevTools.jl), [DiffEqDocs.jl](https://github.com/JuliaDiffEq/DiffEqDocs.jl), [DiffEqBenchmarks.jl](https://github.com/JuliaDiffEq/DiffEqBenchmarks.jl), [juliadiffeq.github.io](https://github.com/JuliaDiffEq/juliadiffeq.github.io).
 
 ## Pull Requests
